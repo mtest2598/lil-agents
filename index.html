@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete AI Agentic Learning Guide - From Scratch to Advanced Multi-Agent AI Systems. 40+ repositories, 300K+ stars, interactive learning paths.">
+    <meta name="keywords" content="AI, Agents, LLM, MultiAgent, LangChain, CrewAI, AutoGen, RAG, Machine Learning">
+    <meta name="author" content="mtest2598">
+    <meta property="og:title" content="AI Agentic Learning Guide">
+    <meta property="og:description" content="Complete roadmap for learning AI agents from scratch">
+    <meta property="og:type" content="website">
+    
+    <title>🤖 AI Agentic Learning Guide - Complete Repository</title>
+    
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 10px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 { 
+            font-size: 2.5em; 
+            margin-bottom: 10px; 
+            word-wrap: break-word;
+        }
+        
+        header p { 
+            font-size: 1.1em; 
+            opacity: 0.95; 
+            margin: 5px 0;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+        
+        nav {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .content { 
+            padding: 20px; 
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            word-wrap: break-word;
+        }
+        
+        h3 { 
+            color: #764ba2; 
+            font-size: 1.3em; 
+            margin-top: 25px; 
+            margin-bottom: 15px; 
+        }
+        
+        .repo-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fa 100%);
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .repo-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+            border-left-color: #764ba2;
+        }
+        
+        .repo-card h4 {
+            color: #667eea;
+            font-size: 1.15em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .stars {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        .repo-card p {
+            margin: 8px 0;
+            color: #555;
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+        
+        .repo-link {
+            display: inline-block;
+            margin-top: 10px;
+            margin-right: 8px;
+            margin-bottom: 5px;
+            padding: 8px 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+        
+        .repo-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .repo-link:active {
+            transform: translateY(0);
+        }
+        
+        .learning-path {
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f8fc 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #0288d1;
+        }
+        
+        .learning-path h4 { 
+            color: #0288d1; 
+            margin-bottom: 12px; 
+        }
+        
+        .learning-path ol {
+            margin-left: 20px;
+        }
+        
+        .learning-path li {
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 0.9em;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover { 
+            background: #f8f9fa; 
+        }
+        
+        ul, ol { 
+            margin-left: 20px; 
+            margin-top: 10px; 
+        }
+        
+        li { 
+            margin: 8px 0; 
+            line-height: 1.6;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+            word-wrap: break-word;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            border-top: 2px solid #e9ecef;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+        
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            font-weight: bold;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8em; }
+            header p { font-size: 0.95em; }
+            h2 { font-size: 1.5em; }
+            .stats { font-size: 0.85em; gap: 8px; }
+            nav { padding: 10px; gap: 8px; }
+            nav a { padding: 6px 10px; font-size: 0.85em; }
+            .content { padding: 15px; }
+            .repo-card { padding: 15px; }
+            .repo-link { padding: 6px 12px; font-size: 0.85em; margin-right: 5px; }
+            table { font-size: 0.8em; }
+            th, td { padding: 8px; }
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 14px;
+                font-size: 0.9em;
+            }
+        }
+        
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; }
+            nav { page-break-after: always; }
+            h2 { page-break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Agentic Learning Guide</h1>
+            <p>From Scratch to Advanced Multi-Agent AI Systems</p>
+            <div class="stats">
+                <div class="stat-item">📚 40+ Repos</div>
+                <div class="stat-item">⭐ 300K+ Stars</div>
+                <div class="stat-item">📖 8 Phases</div>
+                <div class="stat-item">🎯 4 Paths</div>
+            </div>
+        </header>
+        
+        <nav>
+            <a href="#phase1">Phase 1</a>
+            <a href="#phase2">Phase 2</a>
+            <a href="#phase3">Phase 3</a>
+            <a href="#phase4">Phase 4</a>
+            <a href="#phase5">Phase 5</a>
+            <a href="#phase6">Phase 6</a>
+            <a href="#phase7">Phase 7</a>
+            <a href="#phase8">Phase 8</a>
+            <a href="#paths">Paths</a>
+        </nav>
+        
+        <div class="content">
+            <div class="highlight">
+                <strong>📱 Mobile Friendly:</strong> This guide works perfectly on Android and iOS. Bookmark it for easy access!
+            </div>
+            
+            <!-- PHASE 1 -->
+            <h2 id="phase1">🎓 PHASE 1: Foundational Learning (LLM Basics)</h2>
+            <p><strong>Goal:</strong> Understand Large Language Models and transformers. | <strong>Timeline:</strong> 2 weeks</p>
+            
+            <div class="repo-card">
+                <h4>📖 LLM Course <span class="stars">⭐ 79K</span></h4>
+                <p><strong>Complete course for beginners with Colab notebooks</strong></p>
+                <p><strong>Topics:</strong> Transformers • Fine-tuning • Inference optimization</p>
+                <a href="https://github.com/mlabonne/llm-course" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>📚 Awesome-LLM <span class="stars">⭐ 26K</span></h4>
+                <p><strong>Curated LLM resources, papers, and tools</strong></p>
+                <a href="https://github.com/Hannibal046/Awesome-LLM" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>📕 Hands-On LLMs <span class="stars">⭐ 25K</span></h4>
+                <p><strong>O'Reilly book with production-ready code examples</strong></p>
+                <a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>🔬 LLMSurvey <span class="stars">⭐ 12K</span></h4>
+                <p><strong>Comprehensive survey on Large Language Models</strong></p>
+                <a href="https://github.com/RUCAIBox/LLMSurvey" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <!-- PHASE 2 -->
+            <h2 id="phase2">⚡ PHASE 2: LLM Serving & Optimization</h2>
+            <p><strong>Goal:</strong> Efficient deployment in production. | <strong>Timeline:</strong> 2 weeks</p>
+            
+            <div class="repo-card">
+                <h4>🚀 SGLang <span class="stars">⭐ 27K</span></h4>
+                <p><strong>High-performance serving for LLMs</strong></p>
+                <a href="https://github.com/sgl-project/sglang" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>🎯 TensorRT-LLM <span class="stars">⭐ 13K</span></h4>
+                <p><strong>NVIDIA's optimized LLM inference</strong></p>
+                <a href="https://github.com/NVIDIA/TensorRT-LLM" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>⚙️ PowerInfer <span class="stars">⭐ 9K</span></h4>
+                <p><strong>Local LLM serving on consumer hardware</strong></p>
+                <a href="https://github.com/Tiiny-AI/PowerInfer" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <!-- PHASE 3 -->
+            <h2 id="phase3">🏗️ PHASE 3: Foundational Frameworks</h2>
+            <p><strong>Goal:</strong> Master core frameworks for AI applications. | <strong>Timeline:</strong> 2 weeks</p>
+            
+            <div class="repo-card">
+                <h4>🔗 LangChain (MAJOR)</h4>
+                <p><strong>All-in-one framework for LLM applications</strong></p>
+                <p><strong>Features:</strong> Chains • Agents • Memory • RAG pipelines</p>
+                <p style="color: #d9534f;"><strong>⚠️ Start here before moving to agents</strong></p>
+                <a href="https://github.com/langchain-ai/langchain" class="repo-link" target="_blank">🔗 GitHub</a>
+                <a href="https://python.langchain.com/" class="repo-link" target="_blank">📚 Docs</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>📊 txtai <span class="stars">⭐ 12K</span></h4>
+                <p><strong>Semantic search + LLM orchestration</strong></p>
+                <a href="https://github.com/neuml/txtai" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <!-- PHASE 4 -->
+            <h2 id="phase4">🤖 PHASE 4: Multi-Agent Frameworks</h2>
+            <p><strong>Goal:</strong> Build systems where agents collaborate. | <strong>Timeline:</strong> 2-3 weeks</p>
+            
+            <div class="repo-card">
+                <h4>🎭 AG2 (AutoGen) <span class="stars">⭐ 4.5K</span></h4>
+                <p><strong>Microsoft's multi-agent conversation framework</strong></p>
+                <p><strong>Perfect for:</strong> Teams of agents solving problems</p>
+                <a href="https://github.com/ag2ai/ag2" class="repo-link" target="_blank">🔗 GitHub</a>
+                <a href="https://microsoft.github.io/autogen/" class="repo-link" target="_blank">📚 Docs</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>👥 CrewAI <span class="stars">⭐ 50K 🏆</span></h4>
+                <p><strong>Framework for orchestrating autonomous role-playing agents</strong></p>
+                <p><strong>Best for:</strong> Enterprise multi-agent applications</p>
+                <a href="https://github.com/crewAIInc/crewAI" class="repo-link" target="_blank">🔗 GitHub</a>
+                <a href="https://crewai.com" class="repo-link" target="_blank">🌐 Website</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>🕸️ LangGraph (ADVANCED)</h4>
+                <p><strong>Graph-based multi-agent orchestration for complex workflows</strong></p>
+                <p style="color: #d9534f;"><strong>⚠️ Master this for production systems</strong></p>
+                <a href="https://github.com/langchain-ai/langgraph" class="repo-link" target="_blank">🔗 GitHub</a>
+                <a href="https://langchain.com/langgraph" class="repo-link" target="_blank">📚 Docs</a>
+            </div>
+            
+            <!-- PHASE 5 -->
+            <h2 id="phase5">🧠 PHASE 5: Advanced Autonomous Agents</h2>
+            <p><strong>Goal:</strong> Build sophisticated autonomous systems. | <strong>Timeline:</strong> 2-3 weeks</p>
+            
+            <div class="repo-card">
+                <h4>📚 Designing Multi-Agent Systems <span class="stars">⭐ 515</span></h4>
+                <p><strong>Building LLM-enabled multi-agent apps from scratch</strong></p>
+                <a href="https://github.com/victordibia/designing-multiagent-systems" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>🏢 AgentCloud <span class="stars">⭐ 683</span></h4>
+                <p><strong>GUI platform for building multi-agent workflows</strong></p>
+                <p><strong>Features:</strong> Drag-and-drop • RAG pipelines • 260+ connectors</p>
+                <a href="https://github.com/rnadigital/agentcloud" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>💾 MCP Memory Service <span class="stars">⭐ 1.7K</span></h4>
+                <p><strong>Persistent memory for multi-agent pipelines</strong></p>
+                <a href="https://github.com/doobidoo/mcp-memory-service" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <!-- PHASE 6 -->
+            <h2 id="phase6">🔍 PHASE 6: RAG + Agents</h2>
+            <p><strong>Goal:</strong> Give agents external knowledge access. | <strong>Timeline:</strong> 2 weeks</p>
+            
+            <div class="repo-card">
+                <h4>🌊 RAGFlow (RECOMMENDED)</h4>
+                <p><strong>Leading open-source RAG engine with agent capabilities</strong></p>
+                <a href="https://github.com/infiniflow/ragflow" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>📚 Agentic RAG for Dummies <span class="stars">⭐ 431</span></h4>
+                <p><strong>Learn agentic RAG from scratch with LangGraph</strong></p>
+                <a href="https://github.com/GiovanniPasq/agentic-rag-for-dummies" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <!-- PHASE 7 -->
+            <h2 id="phase7">🚀 PHASE 7: Specialized Agents</h2>
+            <p><strong>Goal:</strong> Build domain-specific agents. | <strong>Timeline:</strong> 2-3 weeks</p>
+            
+            <h3>Research & Analysis</h3>
+            <div class="repo-card">
+                <h4>🔬 GPT-Researcher</h4>
+                <p><strong>Autonomous deep research agent for any topic</strong></p>
+                <a href="https://github.com/assafelovic/gpt-researcher" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>📊 DeepAnalyze</h4>
+                <p><strong>Autonomous data science agent</strong></p>
+                <a href="https://github.com/ruc-datalab/DeepAnalyze" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <h3>Development & Code</h3>
+            <div class="repo-card">
+                <h4>💻 OpenHands (OpenDevin)</h4>
+                <p><strong>Autonomous software development agents</strong></p>
+                <a href="https://github.com/All-Hands-AI/OpenHands" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <h3>Security</h3>
+            <div class="repo-card">
+                <h4>🔐 PentestGPT <span class="stars">⭐ 12K</span></h4>
+                <p><strong>Automated penetration testing with agents</strong></p>
+                <a href="https://github.com/GreyDGL/PentestGPT" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <!-- PHASE 8 -->
+            <h2 id="phase8">🎨 PHASE 8: Deployment & UI</h2>
+            <p><strong>Goal:</strong> Deploy agents with user interfaces. | <strong>Timeline:</strong> 1-2 weeks</p>
+            
+            <div class="repo-card">
+                <h4>🌐 AutoGen UI <span class="stars">⭐ 997</span></h4>
+                <p><strong>Web UI for visualizing multi-agent conversations</strong></p>
+                <a href="https://github.com/victordibia/autogen-ui" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <div class="repo-card">
+                <h4>🖥️ AgentGPT</h4>
+                <p><strong>Configure and deploy agents in your browser</strong></p>
+                <a href="https://github.com/reworkd/AgentGPT" class="repo-link" target="_blank">🔗 Visit</a>
+            </div>
+            
+            <!-- LEARNING PATHS -->
+            <h2 id="paths">📚 Learning Paths</h2>
+            
+            <div class="learning-path">
+                <h4>🟢 For Beginners (16 Weeks)</h4>
+                <ol>
+                    <li>Week 1-2: <a href="https://github.com/mlabonne/llm-course" target="_blank">LLM Course</a></li>
+                    <li>Week 3-4: Optimization (SGLang, TensorRT)</li>
+                    <li>Week 5-6: <a href="https://github.com/langchain-ai/langchain" target="_blank">LangChain</a></li>
+                    <li>Week 7-8: <a href="https://github.com/crewAIInc/crewAI" target="_blank">CrewAI</a></li>
+                    <li>Week 9-10: <a href="https://github.com/langchain-ai/langgraph" target="_blank">LangGraph</a></li>
+                    <li>Week 11-12: <a href="https://github.com/infiniflow/ragflow" target="_blank">RAGFlow</a></li>
+                    <li>Week 13-14: Specialized agents</li>
+                    <li>Week 15-16: Deployment</li>
+                </ol>
+            </div>
+            
+            <div class="learning-path">
+                <h4>🟡 For Engineers (8 Weeks)</h4>
+                <ol>
+                    <li>Week 1: <a href="https://github.com/langchain-ai/langchain" target="_blank">LangChain</a> deep dive</li>
+                    <li>Week 2-3: <a href="https://github.com/langchain-ai/langgraph" target="_blank">LangGraph</a> mastery</li>
+                    <li>Week 4: <a href="https://github.com/ag2ai/ag2" target="_blank">AG2</a> patterns</li>
+                    <li>Week 5: Multi-agent design</li>
+                    <li>Week 6: Agentic RAG</li>
+                    <li>Week 7: FastAgency deployment</li>
+                    <li>Week 8: Build production system</li>
+                </ol>
+            </div>
+            
+            <div class="learning-path">
+                <h4>🔵 For Enterprise (12 Weeks)</h4>
+                <ol>
+                    <li>Week 1: <a href="https://github.com/crewAIInc/crewAI" target="_blank">CrewAI</a></li>
+                    <li>Week 2-3: <a href="https://github.com/langchain-ai/langgraph" target="_blank">LangGraph</a></li>
+                    <li>Week 4-5: <a href="https://github.com/rnadigital/agentcloud" target="_blank">AgentCloud</a></li>
+                    <li>Week 6: <a href="https://github.com/infiniflow/ragflow" target="_blank">RAGFlow</a></li>
+                    <li>Week 7: Memory systems</li>
+                    <li>Week 8-12: Production deployment</li>
+                </ol>
+            </div>
+            
+            <!-- SUMMARY -->
+            <h2>📊 Repository Summary</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Repos</th>
+                        <th>Stars</th>
+                        <th>Difficulty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LLM Learning</td>
+                        <td>5</td>
+                        <td>143K+</td>
+                        <td>Beginner</td>
+                    </tr>
+                    <tr>
+                        <td>Multi-Agent</td>
+                        <td>4</td>
+                        <td>56K+</td>
+                        <td>Intermediate</td>
+                    </tr>
+                    <tr>
+                        <td>RAG + Agents</td>
+                        <td>8</td>
+                        <td>2K+</td>
+                        <td>Advanced</td>
+                    </tr>
+                    <tr>
+                        <td>Specialized</td>
+                        <td>8+</td>
+                        <td>20K+</td>
+                        <td>Advanced</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- QUICK START -->
+            <h2>🎯 Quick Start</h2>
+            <ol>
+                <li>Choose your role (Beginner, Engineer, or Enterprise)</li>
+                <li>Follow the learning path above</li>
+                <li>Click repository links to visit GitHub</li>
+                <li>Clone and start building!</li>
+            </ol>
+            
+            <footer>
+                <p><strong>🤖 AI Agentic Learning Guide</strong></p>
+                <p>40+ Repositories • 300K+ Combined Stars • 8 Learning Phases</p>
+                <p style="margin-top: 15px;">Created: May 5, 2026 | Hosted on GitHub Pages</p>
+                <p style="margin-top: 10px; font-size: 0.85em;">📱 Mobile Friendly • 💻 Desktop Compatible • 🌐 Always Free</p>
+            </footer>
+        </div>
+    </div>
+    
+    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        ↑ Top
+    </div>
+    
+    <script>
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const btn = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
